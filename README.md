@@ -47,7 +47,7 @@ For more information, here are some good resources on the topic:
 - [User-generated content and DOM clobbering](http://opensoul.org/2014/09/05/dom-clobbering/)
 - [In the DOM, no one will hear you scream](https://www.slideshare.net/x00mario/in-the-dom-no-one-will-hear-you-scream)
 - [A discussion about GitHub implementation](https://github.com/jch/html-pipeline/pull/111#issuecomment-34369984)
-- [A open issue on markdown-it repo](https://github.com/markdown-it/markdown-it/issues/28)
+- [An open issue on markdown-it repo](https://github.com/markdown-it/markdown-it/issues/28)
 
 ### But the prefixes make links look real gross.
 One solution is to write some client side JavaScript to force non-prefixed hashes to jump to prefixed anchors. This is how its handled on GitHub and npmjs.com.
