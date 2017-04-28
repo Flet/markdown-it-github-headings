@@ -1,0 +1,37 @@
+{
+  "name": "markdown-it-github-headings",
+  "description": "Add GitHub style anchor tags to headers",
+  "version": "1.0.0",
+  "author": "Dan Flettre <flettre@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/Flet/markdown-it-github-headings/issues"
+  },
+  "devDependencies": {
+    "markdown-it": "^8.3.1",
+    "standard": "*",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/Flet/markdown-it-github-headings",
+  "keywords": [
+    "anchor",
+    "github",
+    "headers",
+    "links",
+    "markdown",
+    "markdown-it-plugin"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Flet/markdown-it-github-headings.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js | tap-spec"
+  },
+  "dependencies": {
+    "github-slugger": "^1.1.1",
+    "innertext": "^1.0.1"
+  }
+}
