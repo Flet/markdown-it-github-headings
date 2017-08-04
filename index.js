@@ -55,7 +55,7 @@ function plugin (md, _opts) {
       // add some link attributes
       linkOpen.attrSet('id', options.prefix + postfix)
       linkOpen.attrSet('class', options.className)
-      linkOpen.attrSet('href', '#' + postfix)
+      linkOpen.attrSet('href', '#' + options.prefix + postfix)
       linkOpen.attrSet('aria-hidden', 'true')
 
       // add new token objects as children of heading
