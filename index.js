@@ -36,7 +36,7 @@ function plugin (md, _opts) {
     if (children && children.length) {
       // Generate an ID based on the heading's innerHTML; first, render without
       // converting gemoji strings to unicode emoji characters
-      var unemojiWithToken = unemoji.bind(null, [Token])
+      var unemojiWithToken = unemoji.bind(null, Token)
       var rendered = md.renderer.renderInline(children.map(unemojiWithToken), opts, env)
       var postfix = slugger.slug(
         innertext(rendered)
