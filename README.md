@@ -36,8 +36,8 @@ Name              | Description                                                 
 `className`                     | name of the class that will be added to the anchor tag               | `anchor`
 `prefixHeadingIds`              | add a prefix to each heading ID. *(see security note below)*         | `true`
 `prefix`                        | if `prefixHeadingIds` is true, use this string to prefix each ID.    | `user-content-`
-`enableHeadingLinkIcons`        | Adds the icon <img src="icon.svg"/> next to each heading | `true`
-`linkIcon`                      | If `enableHeadingLinkIcons` is true, use this to supply a custom icon (or anything really) | <img src="icon.svg"/>
+`enableHeadingLinkIcons`        | Adds the icon ![](icon.svg) next to each heading | `true`
+`linkIcon`                      | If `enableHeadingLinkIcons` is true, use this to supply a custom icon (or anything really) | ![](icon.svg)
 
 ## Why should I prefix heading IDs?
 When using user generated content, its possible to run into **DOM Clobbering** when heading IDs are generated. Since IDs are used by JavaScript and CSS, a user could craft a page that breaks functionality or styles. A good way to avoid clobbering is to add a prefix to every generated ID to ensure they cannot overlap with existing IDs.
