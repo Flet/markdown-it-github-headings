@@ -3,13 +3,14 @@ module.exports = plugin
 var fs = require('fs')
 var GithubSlugger = require('github-slugger')
 var innertext = require('innertext')
+var path = require('path')
 var defaultOptions = {
   enableHeadingLinkIcons: true,
   prefixHeadingIds: true,
   prefix: 'user-content-',
   className: 'anchor',
   // shamelessly borrowed from GitHub, thanks y'all
-  linkIcon: fs.readFileSync('./icon.svg').toString('utf-8')
+  linkIcon: fs.readFileSync(path.join(__dirname, './icon.svg')).toString('utf-8')
 }
 
 function plugin (md, _opts) {
