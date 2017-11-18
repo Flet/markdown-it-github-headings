@@ -55,13 +55,6 @@ test('prefixHeadingIds: false', function (t) {
   t.end()
 })
 
-test('prefixHeadingIds: false', function (t) {
-  var result = md().use(anchor, {prefixHeadingIds: false}).render('# Hello')
-  var expectedResult = `<h1><a id="hello" class="anchor" href="#hello" aria-hidden="true">${svg}</a>Hello</h1>\n`
-  t.equals(result, expectedResult, 'works')
-  t.end()
-})
-
 test('enableHeadingLinkIcons: false', function (t) {
   var result = md().use(anchor, {enableHeadingLinkIcons: false}).render('# Hello')
   var expectedResult = `<h1><a id="user-content-hello" class="anchor" href="#hello" aria-hidden="true"></a>Hello</h1>\n`
