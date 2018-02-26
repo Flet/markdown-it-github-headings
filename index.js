@@ -2,7 +2,6 @@ module.exports = plugin
 
 var GithubSlugger = require('github-slugger')
 var innertext = require('innertext')
-var path = require('path')
 var defaultOptions = {
   enableHeadingLinkIcons: true,
   prefixHeadingIds: true,
