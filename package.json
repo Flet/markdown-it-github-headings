@@ -9,7 +9,7 @@
   "devDependencies": {
     "markdown-it": "^8.3.1",
     "standard": "*",
-    "tap-spec": "^4.0.2",
+    "tap-spec": "^5.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/Flet/markdown-it-github-headings",
