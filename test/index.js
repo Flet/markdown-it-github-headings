@@ -11,6 +11,34 @@ test('works as expected', function (t) {
   t.end()
 })
 
+test('resets slugger on every run', function (t) {
+  var instance = md().use(anchor)
+
+  var result = instance.render('# Hello')
+  var expectedResult = `<h1><a id="user-content-hello" class="anchor" href="#hello" aria-hidden="true">${svg}</a>Hello</h1>\n`
+  t.equals(result, expectedResult, 'works')
+
+  result = instance.render('# Hello')
+  expectedResult = `<h1><a id="user-content-hello" class="anchor" href="#hello" aria-hidden="true">${svg}</a>Hello</h1>\n`
+  t.equals(result, expectedResult, 'works')
+
+  t.end()
+})
+
+test('resetSlugger false does not reset on every run', function (t) {
+  var instance = md().use(anchor, { resetSlugger: false })
+
+  var result = instance.render('# Hello')
+  var expectedResult = `<h1><a id="user-content-hello" class="anchor" href="#hello" aria-hidden="true">${svg}</a>Hello</h1>\n`
+  t.equals(result, expectedResult, 'works')
+
+  var result2 = instance.render('# Hello')
+  var expectedResult2 = `<h1><a id="user-content-hello-1" class="anchor" href="#hello-1" aria-hidden="true">${svg}</a>Hello</h1>\n`
+  t.equals(result2, expectedResult2, 'works')
+
+  t.end()
+})
+
 test('multiple headers', function (t) {
   var input = `
 ## Hello
