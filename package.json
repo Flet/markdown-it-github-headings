@@ -7,10 +7,10 @@
     "url": "https://github.com/Flet/markdown-it-github-headings/issues"
   },
   "devDependencies": {
-    "markdown-it": "^8.3.1",
+    "markdown-it": "^13.0.1",
     "standard": "*",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.0.0"
+    "tap-arc": "^0.3.4",
+    "tape": "^5.5.3"
   },
   "homepage": "https://github.com/Flet/markdown-it-github-headings",
   "keywords": [
@@ -29,7 +29,7 @@
     "url": "https://github.com/Flet/markdown-it-github-headings.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js | tap-spec"
+    "test": "standard && tape test/*.js | tap-arc"
   },
   "dependencies": {
     "github-slugger": "^1.1.1",
