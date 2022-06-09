@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## 2.0.1 2022-06-09
+
+ - Add TypeScript Declaration #19 Thank you [@ashaifarhan](https://github.com/ashalfarhan) for contributing!
+ - Updated dev dependencies to squelch audit warnings.
+
 ## 2.0.0 2020-01-14
 
   - BREAKING: add resetSlugger option and default to true
