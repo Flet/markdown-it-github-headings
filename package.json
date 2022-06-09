@@ -1,7 +1,7 @@
 {
   "name": "markdown-it-github-headings",
   "description": "Add GitHub style anchor tags to headers",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Dan Flettre <flettre@gmail.com>",
   "bugs": {
     "url": "https://github.com/Flet/markdown-it-github-headings/issues"
