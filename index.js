@@ -1,8 +1,8 @@
 module.exports = plugin
 
-var GithubSlugger = require('github-slugger')
-var innertext = require('innertext')
-var defaultOptions = {
+const GithubSlugger = require('github-slugger')
+const innertext = require('innertext')
+const defaultOptions = {
   enableHeadingLinkIcons: true,
   prefixHeadingIds: true,
   prefix: 'user-content-',
@@ -13,12 +13,12 @@ var defaultOptions = {
 }
 
 function plugin (md, _opts) {
-  var options = Object.assign({}, defaultOptions, _opts)
+  const options = Object.assign({}, defaultOptions, _opts)
 
   if (!options.prefixHeadingIds) options.prefix = ''
 
-  var slugger = new GithubSlugger()
-  var Token
+  const slugger = new GithubSlugger()
+  let Token
 
   md.core.ruler.push('headingLinks', function (state) {
     if (options.resetSlugger) {
@@ -34,26 +34,26 @@ function plugin (md, _opts) {
   })
 
   md.renderer.rules.heading_open = function (tokens, idx, opts, env, self) {
-    var children = tokens[idx + 1].children
+    const children = tokens[idx + 1].children
     // make sure heading is not empty
     if (children && children.length) {
       // Generate an ID based on the heading's innerHTML; first, render without
       // converting gemoji strings to unicode emoji characters
-      var unemojiWithToken = unemoji.bind(null, Token)
-      var rendered = md.renderer.renderInline(children.map(unemojiWithToken), opts, env)
-      var postfix = slugger.slug(
+      const unemojiWithToken = unemoji.bind(null, Token)
+      const rendered = md.renderer.renderInline(children.map(unemojiWithToken), opts, env)
+      const postfix = slugger.slug(
         innertext(rendered)
           .replace(/[<>]/g, '') // In case the heading contains `<stuff>`
           .toLowerCase() // because `slug` doesn't lowercase
       )
 
       // add 3 new token objects link_open, text, link_close
-      var linkOpen = new Token('link_open', 'a', 1)
-      var text = new Token('html_inline', '', 0)
+      const linkOpen = new Token('link_open', 'a', 1)
+      const text = new Token('html_inline', '', 0)
       if (options.enableHeadingLinkIcons) {
         text.content = options.linkIcon
       }
-      var linkClose = new Token('link_close', 'a', -1)
+      const linkClose = new Token('link_close', 'a', -1)
 
       // add some link attributes
       linkOpen.attrSet('id', options.prefix + postfix)
@@ -73,7 +73,7 @@ function plugin (md, _opts) {
 
 function unemoji (TokenConstructor, token) {
   if (token.type === 'emoji') {
-    return Object.assign(new TokenConstructor(), token, {content: token.markup})
+    return Object.assign(new TokenConstructor(), token, { content: token.markup })
   }
   return token
 }
